@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practica 2</title>
+    <link rel="stylesheet" type="text/css" href="est.css">
+</head>
+<body>
+
+<div class="cp">
+
+<p class="tt">Vector</p>
+
+<form class="f1">
+<label>Nombre que quiere agregar:</label><br>
+<input type="text" placeholder="ingese el nombre" id="nom1">
+<input type="button" value="Agregar" id="b1" onclick="ingre();">  
+</form>
+
+<br>
+
+<form class="f2">
+<label>Nombre que quiere eliminar:</label>
+<input type="text" placeholder="ingese el nombre" id="nom2">
+<input type="button" value="Eliminar" id="b2" onclick="elimi();">  
+<br>
+<br>
+<label class="t2">Confirmación</label>
+<br>
+<input type="text" id="resp" class="respe" >
+</form>
+
+</div>
+
+
+<script type="text/javascript">
+
+       vec=["Andres","Federico"];
+
+       console.log(vec);
+
+
+       var ingre=function() {
+            
+            var nomv= document.getElementById("nom1").value;
+            vec.push(nomv);
+            nom1.value="";
+            console.log(vec);
+
+       }
+
+
+       var elimi=function(){ 
+
+    var w=0;
+    var nomb=document.getElementById("nom2").value;
+    var l=vec.length;
+    var pn=l-1; 
+
+
+    while(w<l)
+    {
+        if(nomb==vec[w])
+        {
+            var p=vec[pn];
+            vec[pn]=vec[w];
+            vec[w]=p;
+            vec.pop();
+            console.log(vec);
+            w=l;
+            document.getElementById("nom2").value="";
+            document.getElementById("resp").value="Listo";
+
+        }
+        else
+        {
+            w=w+1;
+            if (nomb!=vec[w])
+            {
+                document.getElementById("resp").value=" Aqui no hay ningun "+nomb;
+                  document.getElementById("nom2").value="";
+
+                            }
+           
+        
+    }
+}
+
+}
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
